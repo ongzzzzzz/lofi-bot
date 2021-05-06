@@ -1,0 +1,32 @@
+{
+  "name": "lofi-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fogeinator/lofi-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fogeinator/lofi-bot/issues"
+  },
+  "homepage": "https://github.com/Fogeinator/lofi-bot#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "@replit/database": "^2.0.0",
+    "discord.js": "^12.5.3",
+    "express": "^4.17.1",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.3.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "glob": "^7.1.6",
+    "ytdl-core": "^4.7.0",
+    "ytdl-core-discord": "^1.2.4"
+  }
+}
