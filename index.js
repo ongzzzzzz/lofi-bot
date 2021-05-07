@@ -39,7 +39,7 @@ client.once("disconnect", () => {
 	console.log("Disconnect!");
 });
 
-client.on("message", async message => {
+client.on("message", async (message) => {
 	if (message.author.bot) return;
 	if (!message.content.startsWith(prefix)) return;
 
@@ -47,6 +47,7 @@ client.on("message", async message => {
 
 	if (message.content.startsWith(`${prefix}play`)) {
 		execute(message, serverQueue);
+		console.log(queue)
 		return;
 	} else if (message.content.startsWith(`${prefix}skip`)) {
 		skip(message, serverQueue);
@@ -153,11 +154,11 @@ function play(guild, song) {
 
 	const dispatcher = serverQueue.connection
 		.play(ytdl(song.url))
-		// .play(ytdl("https://www.youtube.com/watch?v=PW0KbfWYwF4"))
 		.on("finish", () => {
 			serverQueue.songs.shift();
 			play(guild, serverQueue.songs[0]);
 		})
+		// add auto restart if is lofi
 		.on("error", error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 	serverQueue.textChannel.send(`Start playing: **${song.title}**`);
